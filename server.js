@@ -69,7 +69,7 @@ if (config.recompressStaticAssets) {
   }
 }
 
-// Send the static documents into the preferred store, skipping expirations
+// Send the static documents into the preferred store, not skipping expirations
 var path, data;
 for (var name in config.documents) {
   path = config.documents[name];
@@ -78,7 +78,7 @@ for (var name in config.documents) {
   if (data) {
     preferredStore.set(name, data, function(cb) {
       winston.debug('loaded static document', { success: cb });
-    }, true);
+    }, false);
   }
   else {
     winston.warn('failed to load static document', { name: name, path: path });
