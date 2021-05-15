@@ -7,7 +7,6 @@ var connect = require('connect');
 var route = require('connect-route');
 var connect_st = require('st');
 var connect_rate_limit = require('connect-ratelimit');
-require('mongodb')
 
 var DocumentHandler = require('./lib/document_handler');
 
